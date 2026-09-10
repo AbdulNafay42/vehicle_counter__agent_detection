@@ -1,5 +1,5 @@
 # Install with: pip install -r requirements.txt
 # Tested on Python 3.13 (Windows, CPU-only torch).
 ultralytics==8.4.138
-opencv-python==5.0.0
+opencv-python==5.0.0.93
 torch==2.14.0

@@ -23,14 +23,45 @@ On the included `traffic.mp4` (1280x720, 25 fps, ~48 s of CCTV):
 already past the counting line in frame 1 at cy=358 and travels away from it, so
 it never crosses.
 
-## Install
+## Getting started
+
+Requires **Python 3.10 or newer** (developed on 3.13) and git.
 
 ```bash
+# 1. Clone
+git clone https://github.com/AbdulNafay42/vehicle_counter__agent_detection.git
+cd vehicle_counter__agent_detection
+
+# 2. Create a virtual environment
+python -m venv venv
+
+# 3. Activate it
+venv\Scripts\activate            # Windows (cmd)
+.\venv\Scripts\Activate.ps1     # Windows (PowerShell)
+source venv/bin/activate         # macOS / Linux
+
+# 4. Install dependencies (~2.5 GB, mostly torch)
 pip install -r requirements.txt
+
+# 5. Run it
+python vehicle_counter.py --source traffic.mp4 --output result.mp4
 ```
 
-Model weights are not committed. Ultralytics downloads `yolo11n.pt` or
-`yolo11s.pt` automatically the first time you run it.
+Model weights are not committed. Ultralytics downloads `yolo11n.pt` (5.6 MB)
+automatically on the first run, so step 5 needs an internet connection the
+first time.
+
+On CPU the sample clip takes a few minutes with `yolo11n.pt`, longer with
+`yolo11s.pt`. Progress prints every 100 frames.
+
+### If PowerShell blocks activation
+
+Windows PowerShell may refuse to run `Activate.ps1`. Either use the cmd form
+above, or allow local scripts for your user once:
+
+```powershell
+Set-ExecutionPolicy -Scope CurrentUser RemoteSigned
+```
 
 ## Usage
 
