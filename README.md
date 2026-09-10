@@ -7,22 +7,6 @@ virtual counting line.
 Built as an agent: it perceives the scene, remembers what it has seen, decides
 whether a genuine crossing occurred, and acts on that decision.
 
-## Results
-
-On the included `traffic.mp4` (1280x720, 25 fps, ~48 s of CCTV):
-
-| Class      | Count |
-| ---------- | ----- |
-| car        | 32    |
-| bus        | 3     |
-| motorcycle | 1     |
-| truck      | 0     |
-| **Total**  | **36** |
-
-`truck: 0` is correct, not a bug. The only truck in the clip (track id 4) is
-already past the counting line in frame 1 at cy=358 and travels away from it, so
-it never crosses.
-
 ## Getting started
 
 Requires **Python 3.10 or newer** (developed on 3.13) and git.
@@ -62,6 +46,22 @@ above, or allow local scripts for your user once:
 ```powershell
 Set-ExecutionPolicy -Scope CurrentUser RemoteSigned
 ```
+
+## Results
+
+On the included `traffic.mp4` (1280x720, 25 fps, ~48 s of CCTV):
+
+| Class      | Count |
+| ---------- | ----- |
+| car        | 32    |
+| bus        | 3     |
+| motorcycle | 1     |
+| truck      | 0     |
+| **Total**  | **36** |
+
+`truck: 0` is correct, not a bug. The only truck in the clip (track id 4) is
+already past the counting line in frame 1 at cy=358 and travels away from it, so
+it never crosses.
 
 ## Usage
 
