@@ -1,0 +1,22 @@
+# Virtual environments
+venv/
+.venv/
+env/
+
+# Python bytecode
+__pycache__/
+*.py[cod]
+
+# YOLO model weights - ultralytics downloads these automatically on first run
+*.pt
+
+# Videos: ignore generated output, keep the sample input
+*.mp4
+!traffic.mp4
+
+# Ultralytics run artifacts
+runs/
+
+# Logs and backups
+debug_log.txt
+*.bak
